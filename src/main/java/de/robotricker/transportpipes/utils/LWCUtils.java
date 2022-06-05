@@ -30,7 +30,7 @@ public class LWCUtils extends JavaModule {
 
     @Override
     public void onPostRegistration(LWCProtectionRegistrationPostEvent e) {
-        if (e.getProtection().getType() == Protection.Type.PUBLIC) {
+        if (e.getProtection().getType() == Protection.Type.PUBLIC || e.getProtection().getBlock() == null) {
             return;
         }
         boolean destroyedAtLeastOneDuct = false;
